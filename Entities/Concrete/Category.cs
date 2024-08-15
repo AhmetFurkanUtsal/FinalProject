@@ -1,4 +1,5 @@
-﻿using Entities.Abstract;
+﻿using Core.Entities;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 namespace Entities.Concrete
 {
     //çıplak class kalmasın
-    public class Category : IEntitiy
+    public class Category : IEntity
     {
         public int CategoryId { get; set; }
 

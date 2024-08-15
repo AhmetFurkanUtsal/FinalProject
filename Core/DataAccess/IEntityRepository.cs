@@ -1,5 +1,5 @@
-﻿using Entities.Abstract;
-using Entities.Concrete;
+﻿
+using Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,13 +7,14 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccess.Abstract
+namespace Core.DataAccess
 {
+    // **Core katmanları diğer katmanları referance almaz 
     // T tipini sınırladık
     // generic constraint
     // T : referans tip olmalı ve IEntity veya implemet edeb nesne
-    // new(): new lenebilir olmalı , interface newlenmez
-    public interface IEntityRepository<T> where T : class, IEntitiy, new()
+    // new(): new lenebilir olmalı , interface newlenmeza
+    public interface IEntityRepository<T> where T : class, IEntity, new()
     {
         List<T> GetAll(Expression<Func<T,bool>> filter = null); 
 

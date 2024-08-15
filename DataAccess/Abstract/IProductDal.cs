@@ -1,4 +1,6 @@
-﻿using Entities.Concrete;
+﻿using Core.DataAccess;
+using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +13,7 @@ namespace DataAccess.Abstract
     //Product ile ilgili veritabanı işlemleri yapar
     public interface IProductDal: IEntityRepository<Product> // çalışma tipin prodct
     {
-
+        List<ProductDetailDto> GetProductDetails();
 
 
     }
