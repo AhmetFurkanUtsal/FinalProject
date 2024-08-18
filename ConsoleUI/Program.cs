@@ -5,16 +5,12 @@ using DataAccess.Concrete.EntityFramework;
 using System.Threading.Channels;
 
 
-static void Main(string[] args)
-{
 
-  
-}
 
 ProductManager productManager = new ProductManager(new EfProductDal());
-foreach (var product in productManager.GetProductDetails())
+foreach (var product in productManager.GetProductDetails().Data)
 {
-    Console.WriteLine(product.ProductName + "/" + product.ProductName);
+    Console.WriteLine(product.ProductName + "/" + product.CategoryName);
 }
 
 //CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
